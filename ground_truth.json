@@ -1,0 +1,35 @@
+{
+  "samples/sample1_default.plist": {
+    "expected_risk": "LOW / SAFE",
+    "description": "Mặc định không khai báo ATS, iOS tự động áp dụng chính sách bảo mật ATS nghiêm ngặt."
+  },
+  "samples/sample2_global_bypass.plist": {
+    "expected_risk": "CRITICAL",
+    "description": "Bật NSAllowsArbitraryLoads = true, vô hiệu hóa toàn bộ bảo vệ ATS trên toàn ứng dụng."
+  },
+  "samples/sample3_domain_http.plist": {
+    "expected_risk": "MEDIUM",
+    "description": "Cho phép HTTP không mã hóa trên một domain xác định (không dùng wildcard)."
+  },
+  "samples/sample4_weak_tls.plist": {
+    "expected_risk": "HIGH",
+    "description": "Cho phép TLS yếu (TLSv1.0) và vô hiệu hóa Forward Secrecy."
+  },
+  "samples/sample5_web_media.plist": {
+    "expected_risk": "MEDIUM",
+    "description": "Cho phép tải nội dung web hoặc media không mã hóa (WebContent / Media)."
+  },
+  "samples/sample6_combination.plist": {
+    "expected_risk": "CRITICAL",
+    "description": "Kết hợp bypass toàn cục NSAllowsArbitraryLoads với rule domain ngoại lệ."
+  },
+  "samples/sample7_wildcard_domain.plist": {
+    "expected_risk": "HIGH",
+    "description": "Cho phép HTTP trên toàn bộ subdomains (*.corp-partner.com) thông qua NSIncludesSubdomains."
+  },
+  "samples/sample8_corrupted.plist": {
+    "expected_risk": "ERROR / CORRUPT",
+    "description": "Tệp XML bị hỏng cú pháp / cắt cụt nhằm kiểm tra xử lý ngoại lệ (Exception Handling)."
+  }
+}
+
